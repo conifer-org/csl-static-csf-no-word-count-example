@@ -1,0 +1,18 @@
+PartialAtoms(
+    partial_atoms: {
+        "multi_app_thread_patom": PartialAtom(
+            name: "main_patom",
+            cmd: "make build RELEASE_TYPE=release CARGO_BUILD_FLAGS='--lib --no-default-features --features multi_app_thread'",
+            cmd_path: "../", //indicates current path (./) relative to where this file is
+            artifact: "../target/wasm32-unknown-unknown/release/random_examples.wasm",
+            //These names should be normal and mustr be replaced with stubs by CSL!
+            electrons: [
+                "boot_enjoy_adding",
+                "add_return_str_receiver_stub"
+            ],
+            env_vars: {
+                "RUSTUP_TOOLCHAIN": String(""),
+            }
+        ),
+    }
+)

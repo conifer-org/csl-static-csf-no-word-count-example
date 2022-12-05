@@ -1,0 +1,8 @@
+[toolchain]
+channel = "stable"
+#channel = "nightly"
+#components = [ "rust-src" ]
+targets = [ "wasm32-unknown-unknown" ]
+#profile = "minimal"
+
+# https://rust-lang.github.io/rustup/overrides.html

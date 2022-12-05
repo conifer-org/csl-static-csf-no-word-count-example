@@ -1,0 +1,19 @@
+#[unstable]
+#build-std = ["core", "std", "alloc", "compiler_builtins", "proc_macro", "panic_abort"]
+# ["core", "std", "alloc", "compiler_builtins", "proc_macro", "panic_abort"]
+
+[build]
+# maybe don't have this in future, and require explicit specification
+# or double cargo file
+target = "wasm32-unknown-unknown"
+#target-dir = "../output/"
+
+[target."wasm32-unknown-unknown"]
+# `rust-lld -flavor "wasm" --help`
+rustflags = [
+    # `rustc --print target-features --target wasm32-unknown-unknown`
+    #"-C", "target-feature=+atomics,+bulk-memory",
+    #"-C", "link-args=--shared-memory --features=atomics,bulk-memory --no-check-features"
+]
+
+[target."wasm32-wasi"]

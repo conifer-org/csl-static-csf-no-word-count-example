@@ -1,0 +1,3 @@
+CSFConfig(
+    main_electron: "test_spawn_no_args_stub",
+)
