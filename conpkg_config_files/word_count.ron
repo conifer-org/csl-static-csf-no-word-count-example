@@ -1,0 +1,55 @@
+App(
+    name: "word-count",
+    partial_atoms_sources: {
+        "word_count_patom_source": PartialAtomsSource(
+            //type: local/git,
+            path: "word_count_patoms.ron"
+        ),
+    },
+    molecules: [
+        Molecule(
+            name: "word_count_molecule_main",
+            atoms: [
+                "word_count_atom_main"
+            ]
+        ),
+        Molecule(
+            name: "word_count_molecule_map",
+            atoms: [
+                "word_count_atom_map"
+            ]
+        ),
+        Molecule(
+            name: "word_count_molecule_reduce",
+            atoms: [
+                "word_count_atom_reduce"
+            ]
+        ),
+    ],
+    atoms: {
+        "word_count_atom_main": Atom(
+            //type: local/git,
+            partial_atoms: {
+                "word_count_patom_main": "word_count_patom_source",
+            }
+        ),
+        
+        "word_count_atom_map": Atom(
+            //type: local/git,
+            partial_atoms: {
+                "word_count_patom_map": "word_count_patom_source",
+            }
+        ),
+
+        "word_count_atom_reduce": Atom(
+            //type: local/git,
+            partial_atoms: {
+                "word_count_patom_reduce": "word_count_patom_source",
+            }
+        ),
+    },
+    main_electron: "boot_main",
+    /*env_vars: {
+        // applies to all atoms and partial_atoms
+    }*/
+)

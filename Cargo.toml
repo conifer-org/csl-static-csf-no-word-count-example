@@ -1,15 +1,10 @@
 [package]
-name = "random_examples"
+name = "word_count"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[[bin]]
-name = "random_examples"
-path = "src/main.rs"
-
 [lib]
-path = "src/examples.rs"
+path = "src/word_count.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
@@ -22,9 +17,6 @@ csl-ffi = { path = "../../conifer-sdk/conifer-standard-library/csl-ffi", default
 [features]
 csl-ffi = ["dep:csl-ffi"]
 csl_static = ["csl-ffi/static", "csl-ffi"]
-decorate_string_atom1 = ["csl_static"]
-decorate_string_atom2 = ["csl_static"]
-
-decorate_string = ["decorate_string_atom1", "decorate_string_atom2"]
-multi_app_thread = ["csl_static"]
-default = ["decorate_string"]
+word_count_main = ["csl_static"]
+word_count_map = ["csl_static"]
+word_count_reduce = ["csl_static"]

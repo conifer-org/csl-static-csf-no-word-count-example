@@ -1,0 +1,43 @@
+PartialAtoms(
+    partial_atoms: {
+        "word_count_patom_main": PartialAtom(
+            name: "main_patom",
+            cmd: "make build RELEASE_TYPE=release CARGO_BUILD_FLAGS='--lib --no-default-features --features word_count_main'",
+            cmd_path: "../", //indicates current path (./) relative to where this file is
+            artifact: "../target/wasm32-unknown-unknown/release/word_count.wasm",
+            //These names should be normal and mustr be replaced with stubs by CSL!
+            electrons: [
+                "boot_main",
+            ],
+            env_vars: {
+                "RUSTUP_TOOLCHAIN": String(""),
+            }
+        ),
+        "word_count_patom_map": PartialAtom(
+            name: "map_patom",
+            cmd: "make build RELEASE_TYPE=release CARGO_BUILD_FLAGS='--lib --no-default-features --features word_count_map'",
+            cmd_path: "../", //indicates current path (./) relative to where this file is
+            artifact: "../target/wasm32-unknown-unknown/release/word_count.wasm",
+            //These names should be normal and mustr be replaced with stubs by CSL!
+            electrons: [
+                "map_receiver_stub",
+            ],
+            env_vars: {
+                "RUSTUP_TOOLCHAIN": String(""),
+            }
+        ),
+        "word_count_patom_reduce": PartialAtom(
+            name: "reduce_patom",
+            cmd: "make build RELEASE_TYPE=release CARGO_BUILD_FLAGS='--lib --no-default-features --features word_count_reduce'",
+            cmd_path: "../", //indicates current path (./) relative to where this file is
+            artifact: "../target/wasm32-unknown-unknown/release/word_count.wasm",
+            //These names should be normal and mustr be replaced with stubs by CSL!
+            electrons: [
+                "reduce_receiver_stub",
+            ],
+            env_vars: {
+                "RUSTUP_TOOLCHAIN": String(""),
+            }
+        ),
+    }
+)
